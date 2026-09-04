@@ -4,6 +4,9 @@ title: "Data and code for granite-related uranium prospectivity in South China"
 type: software
 version: 1.0.0
 repository-code: "https://github.com/dqq63160-prog/granite-uranium-prospectivity-south-china"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22297069"
 license: MIT
 authors:
   - family-names: Sun

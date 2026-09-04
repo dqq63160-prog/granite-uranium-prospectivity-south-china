@@ -1,5 +1,7 @@
 # Granite-related uranium prospectivity in South China
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22297069.svg)](https://doi.org/10.5281/zenodo.22297069)
+
 This repository contains the data, executable workflows, and canonical numerical
 outputs supporting the analysis of uranium prospectivity, granite-type affinity,
 and their cross-task geochemical interpretation in South China.
