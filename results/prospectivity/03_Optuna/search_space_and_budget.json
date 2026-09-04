@@ -1,0 +1,101 @@
+{
+  "analysis_protocol_hash": "9eb1905b0d2d4dff99236976201e564cbe25ee258ba901ad38107c5c6b5846f0",
+  "analysis_revision": "task_a_source_connected_optuna_shap_v7_3_convergence_audited",
+  "cohort_hash": "2d175814572cfa76e5ac22dbb985a313f8c07af4cbf7447a8f23ef55bd18c4f5",
+  "models": [
+    "RF",
+    "SVM",
+    "MLP",
+    "XGBoost"
+  ],
+  "pruning": false,
+  "sampler": "TPESampler",
+  "search_spaces": {
+    "MLP": {
+      "alpha": [
+        1e-06,
+        0.01
+      ],
+      "hidden_layers": [
+        1,
+        2
+      ],
+      "hidden_units": [
+        32,
+        160
+      ],
+      "learning_rate_init": [
+        0.0001,
+        0.01
+      ]
+    },
+    "RF": {
+      "allow_unlimited_depth": true,
+      "max_depth": [
+        4,
+        20
+      ],
+      "max_features": [
+        0.25,
+        0.9
+      ],
+      "min_samples_leaf": [
+        2,
+        12
+      ],
+      "n_estimators": [
+        300,
+        1000
+      ]
+    },
+    "SVM": {
+      "C": [
+        0.01,
+        100.0
+      ],
+      "gamma": [
+        1e-05,
+        0.1
+      ]
+    },
+    "XGBoost": {
+      "colsample_bytree": [
+        0.6,
+        1.0
+      ],
+      "gamma": [
+        0.0,
+        2.0
+      ],
+      "learning_rate": [
+        0.01,
+        0.12
+      ],
+      "max_depth": [
+        2,
+        6
+      ],
+      "min_child_weight": [
+        2.0,
+        20.0
+      ],
+      "n_estimators": [
+        200,
+        900
+      ],
+      "reg_alpha": [
+        1e-06,
+        5.0
+      ],
+      "reg_lambda": [
+        0.001,
+        20.0
+      ],
+      "subsample": [
+        0.6,
+        1.0
+      ]
+    }
+  },
+  "trials_per_model_per_outer_fold": 40
+}

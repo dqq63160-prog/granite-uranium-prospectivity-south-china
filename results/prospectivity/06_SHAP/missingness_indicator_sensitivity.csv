@@ -1,0 +1,3 @@
+﻿variant,consensus_group_roc_auc,consensus_group_f1,threshold_used,n_groups,auc_absolute_delta_vs_baseline,f1_absolute_delta_vs_baseline,missingness_pattern_not_significantly_exploited
+baseline,0.8585858585858586,0.7035175879396985,0.35,366,0.0,0.0,True
+with_missingness_indicator,0.8622251931075461,0.6633165829145728,0.35,366,0.0036393345216875206,0.04020100502512569,True

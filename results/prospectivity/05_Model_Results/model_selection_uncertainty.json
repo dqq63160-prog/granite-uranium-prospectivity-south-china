@@ -1,0 +1,20 @@
+{
+  "block_bootstrap": {
+    "bootstrap_unit": "CV Block ID",
+    "iterations_requested": 2000,
+    "pair_count": 6,
+    "pairwise_auc_intervals_include_zero": 5
+  },
+  "eligible_models_within_auc_tolerance": [
+    "XGBoost"
+  ],
+  "group_bootstrap": {
+    "bootstrap_unit": "Geological Group ID",
+    "iterations_requested": 2000,
+    "pair_count": 6,
+    "pairwise_auc_intervals_include_zero": 5
+  },
+  "primary_resampling_unit": "Geological Group ID",
+  "selected_model": "XGBoost",
+  "sensitivity_resampling_unit": "CV Block ID"
+}

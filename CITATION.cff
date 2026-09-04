@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the archived release and the associated article."
+title: "Data and code for granite-related uranium prospectivity in South China"
+type: software
+version: 1.0.0
+repository-code: "https://github.com/dqq63160-prog/granite-uranium-prospectivity-south-china"
+license: MIT
+authors:
+  - family-names: Sun
+    given-names: Jiayi
+  - family-names: Li
+    given-names: Penggang
+  - family-names: Kong
+    given-names: Depeng
+  - family-names: He
+    given-names: Haiyang
+  - family-names: Li
+    given-names: Bowen
+  - family-names: Ni
+    given-names: Longguang
+  - family-names: Zhu
+    given-names: Guowei
+  - family-names: Wen
+    given-names: Ying
+  - family-names: Li
+    given-names: Xiangcheng
+  - family-names: Huang
+    given-names: Xiangyao
+  - family-names: Feng
+    given-names: Jiawei
+keywords:
+  - uranium prospectivity
+  - whole-rock geochemistry
+  - granite classification
+  - explainable machine learning
+  - South China

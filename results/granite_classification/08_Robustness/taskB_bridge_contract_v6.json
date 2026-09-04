@@ -1,0 +1,51 @@
+{
+  "analysis_revision": "task_b_source_connected_class_neutral_v6_rigorous",
+  "analysis_protocol_hash": "A2CFC6311C185EAA2F17BA13E733D522713F64F2850C50F6EEF6E4CE1F592221",
+  "readiness_level": "not_ready",
+  "evidence_layer": "canonical repeat of full-data source-connected OOF prediction and attribution",
+  "performance_evidence_layer": "repeated development source-connected nested OOF",
+  "canonical_repeat_id": 1,
+  "canonical_repeat_seed": 20269892,
+  "validity_column": "valid_oof",
+  "record_id_column": "Record ID",
+  "group_id_column": "Geological Group ID",
+  "source_block_column": "Reference-connected block",
+  "preferred_probability_columns": {
+    "I": "calibrated_P_I",
+    "A": "calibrated_P_A",
+    "S": "calibrated_P_S"
+  },
+  "uncalibrated_sensitivity_columns": {
+    "I": "raw_P_I",
+    "A": "raw_P_A",
+    "S": "raw_P_S"
+  },
+  "primary_bridge_features": [
+    "Rb",
+    "CaO",
+    "Nb",
+    "Zr",
+    "P2O5",
+    "Ba"
+  ],
+  "legacy_sensitivity_features": [
+    "MgO",
+    "Na2O",
+    "K2O"
+  ],
+  "primary_shap_files": {
+    "I": "taskB_canonical_oof_I_shap_with_ids_v6.csv",
+    "A": "taskB_canonical_oof_A_shap_with_ids_v6.csv",
+    "S": "taskB_canonical_oof_S_shap_with_ids_v6.csv"
+  },
+  "prediction_file": "taskB_canonical_oof_record_predictions.csv",
+  "valid_canonical_oof_records": 1709,
+  "total_records": 1864,
+  "record_id_unique": true,
+  "part4_eligibility_determined_here": false,
+  "prohibited_claims": [
+    "coupling improves predictive performance without a prospective comparison",
+    "SHAP proves petrogenetic or metallogenic causality",
+    "fixed heldout S-type F1 alone establishes stable attribution"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "auc_closeness_reference_not_applied_to_unlabelled_challenge": 0.03,
+  "average_precision_closeness_reference_not_applied_to_unlabelled_challenge": 0.05,
+  "challenge_groups": 5,
+  "challenge_records": 261,
+  "interpretive_limit": "Challenge scores characterize prediction behaviour and uncertainty; they are not validation metrics.",
+  "label_audit_retained_separately_but_not_used_for_prediction": 261,
+  "model_score_type": "predict_proba",
+  "nonoverlapping_group_sensitivity_count": 5,
+  "outer_models_per_record": 15,
+  "performance_metrics_calculated_for_mixed_groups": false,
+  "selected_model": "XGBoost",
+  "source_overlap_flagged_records": 144,
+  "stable_negative_model_score_median": 0.017413600347936098,
+  "stable_positive_model_score_median": 0.6412866413593292,
+  "status": "completed_without_binary_performance_scoring"
+}

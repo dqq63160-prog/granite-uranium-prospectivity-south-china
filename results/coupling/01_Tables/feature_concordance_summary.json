@@ -1,0 +1,9 @@
+{
+  "shared_features": 6,
+  "direction_agreements": 5,
+  "direction_agreement_fraction": 0.8333333333333334,
+  "observed_signed_contribution_cosine": 0.8226831990864485,
+  "exact_feature_label_permutation_p": 0.026352288488210817,
+  "permutations": 720,
+  "comparison_rule": "Cross-task comparison uses direction and within-task contribution share; raw SHAP magnitudes are not compared."
+}

@@ -1,0 +1,4 @@
+reported_type,total_records,evaluable_records,coverage
+A,56,56,1.0
+I,100,87,0.87
+S,225,214,0.9511111111111111

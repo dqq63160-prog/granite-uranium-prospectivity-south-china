@@ -1,0 +1,13 @@
+{
+  "title": "Data and code for granite-related uranium prospectivity in South China",
+  "description": "Reproducible workflows and canonical numerical outputs for uranium prospectivity modelling, granite-type classification, and cross-task geochemical attribution using whole-rock geochemistry from South China.",
+  "creators": [
+    {"name": "Sun, Jiayi"}, {"name": "Li, Penggang"}, {"name": "Kong, Depeng"},
+    {"name": "He, Haiyang"}, {"name": "Li, Bowen"}, {"name": "Ni, Longguang"},
+    {"name": "Zhu, Guowei"}, {"name": "Wen, Ying"}, {"name": "Li, Xiangcheng"},
+    {"name": "Huang, Xiangyao"}, {"name": "Feng, Jiawei"}
+  ],
+  "keywords": ["uranium prospectivity", "whole-rock geochemistry", "granite classification", "SHAP", "South China"],
+  "upload_type": "software",
+  "access_right": "open"
+}

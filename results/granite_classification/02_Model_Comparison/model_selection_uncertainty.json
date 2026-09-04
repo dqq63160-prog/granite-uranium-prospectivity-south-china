@@ -1,0 +1,30 @@
+{
+  "resampling_unit": "Reference-connected block",
+  "bootstrap_replicates": 2000,
+  "pairwise_macro_f1_differences": [
+    {
+      "best_model": "XGBoost",
+      "comparator": "RF",
+      "macro_f1_difference": 0.027044481374909002,
+      "ci_low": -0.14945526175023122,
+      "ci_high": 0.1833428644587246,
+      "supports_unique_best": false
+    },
+    {
+      "best_model": "XGBoost",
+      "comparator": "SVM",
+      "macro_f1_difference": 0.04426098135002965,
+      "ci_low": -0.12759050920864892,
+      "ci_high": 0.21139706557754417,
+      "supports_unique_best": false
+    },
+    {
+      "best_model": "XGBoost",
+      "comparator": "MLP",
+      "macro_f1_difference": 0.011162992663271809,
+      "ci_low": -0.09336288603581384,
+      "ci_high": 0.1251491208945887,
+      "supports_unique_best": false
+    }
+  ]
+}

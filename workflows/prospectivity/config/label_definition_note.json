@@ -1,0 +1,7 @@
+{
+  "label_name": "Mineralization label",
+  "definition_basis": "documented geological setting and uranium-mineralization evidence",
+  "independent_of_model_performance": true,
+  "source_columns": ["Geological Group ID", "Geological Group Name", "Reference ID"],
+  "note": "The code validates and records labels but does not generate or optimize them."
+}

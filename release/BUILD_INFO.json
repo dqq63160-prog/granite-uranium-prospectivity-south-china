@@ -1,0 +1,17 @@
+{
+  "source_dataset": "Supplementary_Table_S1.xlsx",
+  "dataset_structure": [
+    "Dataset",
+    "Geological Groups",
+    "References",
+    "Data dictionary"
+  ],
+  "result_bundle": "curated canonical outputs",
+  "excluded": [
+    "runtime logs",
+    "SQLite databases",
+    "binary model objects",
+    "duplicate figure renderings",
+    "development history"
+  ]
+}

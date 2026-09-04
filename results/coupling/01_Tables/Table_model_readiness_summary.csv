@@ -1,0 +1,6 @@
+﻿module,evidence_layer,readiness,coupling_use,key_metric,value,claim_boundary
+Task A uranium prospectivity,grouped OOF,eligible_for_exploratory_part4_coupling,exploratory_only,selected model,XGBoost,exploratory attribution coupling; no causal claim
+Task B complete I/A/S classification,repeated development source-connected nested OOF plus repeated full-data OOF SHAP,not_ready,not eligible for formal full three-class linkage,macro-F1,0.5111111111111111,performance and diagnostic attribution only
+Task B S-type branch,class-specific repeated OOF and SHAP stability,relative branch-level reproducibility,hypothesis-generating restricted analysis,S-type F1,0.6666666666666666,does not override overall Task B readiness
+Matched Part 4 cohort,exact Record ID intersection,audited at runtime,group/source-block inference,matched records,1544,68 geological groups; 67 connected blocks
+Shared geochemical attribution,six locked features,diagnostic,direction/rank/contribution-share comparison,direction agreements,5/6,raw SHAP magnitudes are not compared

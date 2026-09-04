@@ -1,0 +1,9 @@
+name: jge-granite-uranium-ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13.5
+  - pip=26.0.1
+  - jupyterlab=4
+  - pip:
+      - -r requirements-lock.txt

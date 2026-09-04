@@ -1,0 +1,8 @@
+﻿omitted_feature,features_retained,signed_share_cosine,exact_permutation_p,analysis_role
+none (locked six-feature primary),6,0.8226831990864484,0.026352288488210817,primary
+Rb,5,0.7493651318674933,0.1487603305785124,leave-one-feature sensitivity
+CaO,5,0.9649503653097101,0.01652892561983471,leave-one-feature sensitivity
+Nb,5,0.7816566496315126,0.14049586776859505,leave-one-feature sensitivity
+Zr,5,0.8332502819689169,0.1487603305785124,leave-one-feature sensitivity
+P2O5,5,0.7950224278427828,0.1487603305785124,leave-one-feature sensitivity
+Ba,5,0.795903565848064,0.1322314049586777,leave-one-feature sensitivity

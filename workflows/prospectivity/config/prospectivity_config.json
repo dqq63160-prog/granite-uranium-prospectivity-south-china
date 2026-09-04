@@ -1,0 +1,255 @@
+{
+  "schema_version": "prospectivity-public-v1",
+  "analysis_revision": "prospectivity_public_release",
+  "protocol_status": "frozen_before_formal_run",
+  "project_name": "JGE uranium-associated prospectivity",
+  "input": {
+    "supplementary_table_s1": "../../data/source/Supplementary_Table_S1.xlsx",
+    "supplementary_table_s2": "../../data/source/Supplementary_Table_S1.xlsx",
+    "s1_sheet": "Dataset",
+    "s2_sheet": "Geological Groups",
+    "header_row": 1
+  },
+  "columns": {
+    "record_id": "Record ID",
+    "sample_id": "Sample ID",
+    "label": "Mineralization label",
+    "group_id": "Geological Group ID",
+    "group_name": "Geological Group Name",
+    "reference_id": "Reference ID",
+    "cv_block_id": "CV Block ID"
+  },
+  "data_rules": {
+    "maximum_feature_missing_fraction": 0.5,
+    "maximum_record_missing_fraction": 0.6,
+    "minimum_numeric_fraction": 0.8,
+    "direct_ore_features_excluded": [
+      "U (ppm)"
+    ],
+    "iron_features_excluded": [
+      "FeOT (wt.%)"
+    ],
+    "metadata_features_excluded": [
+      "Record ID",
+      "Sample ID",
+      "Mineralization label",
+      "Age reported (Ma)",
+      "Granite type",
+      "Geological Group ID",
+      "Geological Group Name",
+      "Reference ID",
+      "CV Block ID"
+    ],
+    "knn_neighbors": 7,
+    "nonnegative_floor": 0.0
+  },
+  "validation": {
+    "base_seed": 20260815,
+    "outer_folds": 5,
+    "outer_repeats": 3,
+    "inner_folds": 4,
+    "minimum_inner_folds": 3,
+    "trials_per_model_per_outer_fold": 40,
+    "study_parallel_jobs": 1,
+    "pruning": false,
+    "models": [
+      "RF",
+      "SVM",
+      "MLP",
+      "XGBoost"
+    ],
+    "optimization_metric": "geological_group_pooled_roc_auc",
+    "trial_auc_tolerance": 0.005,
+    "threshold_minimum_recall": 0.55,
+    "threshold_minimum_specificity": 0.55,
+    "threshold_grid_minimum": 0.1,
+    "threshold_grid_maximum": 0.9,
+    "threshold_grid_size": 161,
+    "geological_group_score_aggregation": "median",
+    "geological_group_score_aggregation_sensitivity": "mean",
+    "group_weighting": "equal_geological_group_weight",
+    "model_selection_rule": "highest consensus ROC-AUC; within 0.005 compare average precision, repeated AUC standard deviation, then F1",
+    "group_bootstrap_iterations": 2000,
+    "confidence_level": 0.95
+  },
+  "optuna": {
+    "sampler": "TPESampler",
+    "storage_filename": "optuna_studies_v7_3_convergence_audited_clean.sqlite3",
+    "load_if_exists": true,
+    "search_spaces": {
+      "RF": {
+        "n_estimators": [
+          300,
+          1000
+        ],
+        "max_depth": [
+          4,
+          20
+        ],
+        "allow_unlimited_depth": true,
+        "min_samples_leaf": [
+          2,
+          12
+        ],
+        "max_features": [
+          0.25,
+          0.9
+        ]
+      },
+      "SVM": {
+        "C": [
+          0.01,
+          100.0
+        ],
+        "gamma": [
+          1e-05,
+          0.1
+        ]
+      },
+      "MLP": {
+        "hidden_layers": [
+          1,
+          2
+        ],
+        "hidden_units": [
+          32,
+          160
+        ],
+        "alpha": [
+          1e-06,
+          0.01
+        ],
+        "learning_rate_init": [
+          0.0001,
+          0.01
+        ]
+      },
+      "XGBoost": {
+        "n_estimators": [
+          200,
+          900
+        ],
+        "learning_rate": [
+          0.01,
+          0.12
+        ],
+        "max_depth": [
+          2,
+          6
+        ],
+        "min_child_weight": [
+          2.0,
+          20.0
+        ],
+        "subsample": [
+          0.6,
+          1.0
+        ],
+        "colsample_bytree": [
+          0.6,
+          1.0
+        ],
+        "gamma": [
+          0.0,
+          2.0
+        ],
+        "reg_alpha": [
+          1e-06,
+          5.0
+        ],
+        "reg_lambda": [
+          0.001,
+          20.0
+        ]
+      }
+    }
+  },
+  "shap": {
+    "locked_bridge_feature_file": "00_Configuration/locked_bridge_features_v1.txt",
+    "maximum_additivity_absolute_error": 0.0001,
+    "maximum_oof_reproduction_absolute_error": 1e-08,
+    "minimum_repeat_rank_spearman": 0.8,
+    "minimum_pairwise_top10_overlap": 0.8,
+    "maximum_rank_standard_deviation": 5.0,
+    "minimum_direction_agreement_fraction": 0.67,
+    "bootstrap_iterations": 2000,
+    "cluster_bootstrap_iterations": 2000,
+    "quality_panel": {
+      "maximum_missing_fraction": 0.15,
+      "maximum_label_missingness_gap": 0.15,
+      "minimum_masked_pearson_r": 0.5,
+      "mask_fraction": 0.1,
+      "mask_repeats": 3,
+      "minimum_feature_count": 15,
+      "maximum_auc_absolute_delta": 0.02,
+      "maximum_f1_absolute_delta": 0.05,
+      "minimum_top10_overlap": 0.7,
+      "minimum_direction_agreement_fraction": 0.67
+    },
+    "candidate_rule": {
+      "maximum_new_rank": 15,
+      "maximum_rank_standard_deviation": 5.0,
+      "minimum_direction_agreement_fraction": 0.67,
+      "direction_ci_must_exclude_zero": true,
+      "observed_completed_direction_must_agree": true,
+      "maximum_missing_fraction": 0.2,
+      "maximum_label_missingness_gap": 0.1,
+      "quality_panel_status_required": true
+    },
+    "top_features_for_figure": 30
+  },
+  "challenge": {
+    "auc_closeness_reference": 0.03,
+    "average_precision_closeness_reference": 0.05,
+    "report_performance_metrics": false
+  },
+  "runtime": {
+    "resume": true,
+    "fail_fast": true,
+    "save_fold_models": false,
+    "keyboard_interrupt_retries_per_trial": 3,
+    "defer_sigint_during_model_fit": true,
+    "mlp_max_iter_per_cycle": 600,
+    "mlp_max_fit_cycles": 3,
+    "mlp_tolerance": 0.0001,
+    "mlp_n_iter_no_change": 20,
+    "strict_environment_check": true,
+    "expected_python_major_minor": [
+      3,
+      13
+    ],
+    "requirements_lock_file": "../../requirements-lock.txt",
+    "require_packages_inside_sys_prefix": false,
+    "matplotlib_font": "Arial",
+    "figure_vector_formats": [
+      "pdf",
+      "svg"
+    ],
+    "data_quality_figure_features": [
+      "FeO (wt.%)",
+      "P2O5 (wt.%)",
+      "Sr (ppm)",
+      "Y (ppm)",
+      "Lu (ppm)",
+      "Pb (ppm)",
+      "Ga (ppm)",
+      "Th (ppm)",
+      "Ta (ppm)",
+      "Hf (ppm)",
+      "Rb (ppm)",
+      "Fe2O3 (wt.%)"
+    ],
+    "pearson_figure_features": [
+      "Pb (ppm)",
+      "Ga (ppm)",
+      "FeO (wt.%)",
+      "Sr (ppm)",
+      "Fe2O3 (wt.%)",
+      "Hf (ppm)",
+      "Y (ppm)",
+      "Nb (ppm)",
+      "P2O5 (wt.%)",
+      "Rb (ppm)"
+    ]
+  }
+}

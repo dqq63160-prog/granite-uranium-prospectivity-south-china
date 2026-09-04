@@ -1,0 +1,10 @@
+{
+  "raw_S1_records": 2875,
+  "explicit_IAS_records": 2874,
+  "excluded_non_IAS_records": 1,
+  "excluded_group_protocol_records": 976,
+  "excluded_weak_mixed_group_minority_records": 34,
+  "retained_analysis_records": 1864,
+  "excluded_geological_groups": 56,
+  "reconciled_weak_mixed_groups": 3
+}

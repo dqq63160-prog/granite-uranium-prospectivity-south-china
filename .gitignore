@@ -1,0 +1,7 @@
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.sqlite3
+*.joblib
+.DS_Store
+results/*/04_Logs/

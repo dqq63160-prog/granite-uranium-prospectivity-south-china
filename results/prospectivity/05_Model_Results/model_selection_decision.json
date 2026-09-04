@@ -1,0 +1,74 @@
+{
+  "analysis_protocol_hash": "9eb1905b0d2d4dff99236976201e564cbe25ee258ba901ad38107c5c6b5846f0",
+  "analysis_revision": "task_a_source_connected_optuna_shap_v7_3_convergence_audited",
+  "auc_tolerance": 0.005,
+  "consensus_metrics": [
+    {
+      "average_precision": 0.6120739344349582,
+      "balanced_accuracy": 0.7790775401069518,
+      "f1": 0.676056338028169,
+      "fn": 10,
+      "fp": 13,
+      "model": "MLP",
+      "precision": 0.6486486486486487,
+      "recall": 0.7058823529411765,
+      "roc_auc": 0.8262032085561497,
+      "roc_auc_sd": 0.02725724041256988,
+      "specificity": 0.8522727272727273,
+      "tn": 75,
+      "tp": 24
+    },
+    {
+      "average_precision": 0.6386875557086201,
+      "balanced_accuracy": 0.7847593582887701,
+      "f1": 0.6857142857142857,
+      "fn": 10,
+      "fp": 12,
+      "model": "RF",
+      "precision": 0.6666666666666666,
+      "recall": 0.7058823529411765,
+      "roc_auc": 0.8512700534759358,
+      "roc_auc_sd": 0.02874914441581265,
+      "specificity": 0.8636363636363636,
+      "tn": 76,
+      "tp": 24
+    },
+    {
+      "average_precision": 0.6122890998708046,
+      "balanced_accuracy": 0.822192513368984,
+      "f1": 0.746268656716418,
+      "fn": 9,
+      "fp": 8,
+      "model": "SVM",
+      "precision": 0.7575757575757576,
+      "recall": 0.7352941176470589,
+      "roc_auc": 0.8078208556149732,
+      "roc_auc_sd": 0.004349202606047871,
+      "specificity": 0.9090909090909091,
+      "tn": 80,
+      "tp": 25
+    },
+    {
+      "average_precision": 0.6926267626873781,
+      "balanced_accuracy": 0.8018048128342246,
+      "f1": 0.7164179104477612,
+      "fn": 10,
+      "fp": 9,
+      "model": "XGBoost",
+      "precision": 0.7272727272727273,
+      "recall": 0.7058823529411765,
+      "roc_auc": 0.8699866310160428,
+      "roc_auc_sd": 0.030221617529975018,
+      "specificity": 0.8977272727272727,
+      "tn": 79,
+      "tp": 24
+    }
+  ],
+  "eligible_models": [
+    "XGBoost"
+  ],
+  "note": "Model selection was completed before SHAP attribution and did not prespecify XGBoost.",
+  "selected_model": "XGBoost",
+  "selected_model_is_tree_based": true,
+  "selection_rule": "highest consensus ROC-AUC; within 0.005 compare average precision, repeated AUC standard deviation, then F1"
+}

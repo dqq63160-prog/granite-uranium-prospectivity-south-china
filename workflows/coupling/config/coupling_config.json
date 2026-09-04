@@ -1,0 +1,75 @@
+{
+  "analysis_revision": "cross_task_coupling_public_release",
+  "paths": {
+    "prospectivity_results": "../../results/prospectivity",
+    "granite_results": "../../results/granite_classification",
+    "output_root": "../../results/coupling"
+  },
+  "analysis": {
+    "bridge_features": [
+      "Rb",
+      "CaO",
+      "Nb",
+      "Zr",
+      "P2O5",
+      "Ba"
+    ],
+    "dependence_features": [
+      "Rb",
+      "CaO",
+      "Nb",
+      "Zr",
+      "P2O5",
+      "Ba"
+    ],
+    "probability_primary": "raw",
+    "probability_sensitivity": "calibrated",
+    "bootstrap_replicates": 2000,
+    "permutation_replicates": 9999,
+    "random_seed": 20260821,
+    "dependence_bins": 5,
+    "s_probability_quantile_groups": 4,
+    "multiple_testing": "Benjamini-Hochberg FDR"
+  },
+  "gates": {
+    "minimum_s_f1": 0.6,
+    "minimum_s_rank_spearman": 0.6,
+    "minimum_s_top10_jaccard": 0.6,
+    "minimum_direction_agreement_fraction": 0.8,
+    "minimum_dependency_blocks": 30,
+    "fdr_alpha": 0.05
+  },
+  "claim_contract": {
+    "formal_full_three_class_coupling_requires_task_b_overall_ready": true,
+    "restricted_s_analysis_is_hypothesis_generating": true,
+    "raw_shap_cross_task_comparison_prohibited": true,
+    "causal_interpretation_prohibited": true,
+    "incremental_prediction_claim_requires_separate_nested_validation": true
+  },
+  "figure_export": {
+    "primary_vector": "svg",
+    "secondary_vector": "pdf",
+    "submission_raster": "tiff",
+    "preview_raster": "png",
+    "tiff_dpi": 600,
+    "png_dpi": 300,
+    "double_column_width_mm": 183,
+    "font_policy": "Arial with DejaVu Sans fallback; chemistry uses mathtext subscripts",
+    "main_text_figures": [
+      "Figure 6",
+      "Figure 7",
+      "Figure 8 when gated",
+      "Figure 9"
+    ],
+    "supplementary_figures": [
+      "Figure S1",
+      "Figure S2",
+      "Figure S3",
+      "Figure S4",
+      "Figure S5",
+      "Figure S6"
+    ],
+    "no_internal_figure_titles": true,
+    "vector_text_editable": true
+  }
+}

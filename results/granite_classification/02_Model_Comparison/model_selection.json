@@ -1,0 +1,41 @@
+{
+  "analysis_protocol_hash": "A2CFC6311C185EAA2F17BA13E733D522713F64F2850C50F6EEF6E4CE1F592221",
+  "best_ranked_model": "XGBoost",
+  "interpretation_model": "XGBoost",
+  "selection_status": "XGBoost_selected_for_SHAP",
+  "unique_best_supported": false,
+  "allowed_claim_strength": "selected model ranked first by the frozen class-neutral rule; at least one pairwise interval included zero",
+  "selection_rule_frozen": true,
+  "predictive_interpretation_gate_passed": true,
+  "selection_data": "development nested source-connected outer OOF only",
+  "heldout_used_for_selection": false,
+  "heldout_used_for_tuning": false,
+  "heldout_used_for_feature_selection": false,
+  "heldout_not_used": true,
+  "primary_selection_metric": "group_type_stratum_macro_f1",
+  "primary_metric_tolerance": 0.01,
+  "tie_break_order": [
+    "group_type_stratum_balanced_accuracy",
+    "minimum_class_recall",
+    "group_type_stratum_macro_ovr_auc",
+    "macro_f1_fold_sd"
+  ],
+  "selected_selection_score": 0.6176301409260857,
+  "selected_metrics": {
+    "macro_f1": 0.6176301409260857,
+    "balanced_accuracy": 0.6222222222222222,
+    "macro_ovr_auc": 0.790732826843938,
+    "precision_I": 0.5384615384615384,
+    "recall_I": 0.4666666666666667,
+    "f1_I": 0.5,
+    "precision_A": 0.6,
+    "recall_A": 0.6666666666666666,
+    "f1_A": 0.631578947368421,
+    "precision_S": 0.7096774193548387,
+    "recall_S": 0.7333333333333333,
+    "f1_S": 0.7213114754098361
+  },
+  "minimum_selected_class_f1": 0.5,
+  "minimum_selected_class_recall": 0.4666666666666667,
+  "interpretation_basis": "models within the prespecified tolerance of the highest geological-group-by-reported-type macro-F1, followed by class-neutral tie-breakers; exact multiclass TreeSHAP is generated only when the selected model is tree based and passes the same minimum F1 and recall requirements for all three classes"
+}

@@ -1,0 +1,87 @@
+{
+  "all_locked_features_reproduced": false,
+  "analysis_protocol_hash": "9eb1905b0d2d4dff99236976201e564cbe25ee258ba901ad38107c5c6b5846f0",
+  "analysis_revision": "task_a_source_connected_optuna_shap_v7_3_convergence_audited",
+  "bridge_status": "eligible_for_exploratory_part4_coupling",
+  "candidate_rule_hash": "9b5e0ec3fc6f70854f751b5e5b642294ea03d82dc9d8232c262c92a4897da421",
+  "causal_interpretation_prohibited": true,
+  "comparison_rule": "Use standardized rank, contribution share, and direction agreement; do not compare raw SHAP magnitudes across models.",
+  "coupling_use": "exploratory_only",
+  "eligible_candidate_features": [
+    "Ta (ppm)",
+    "Rb (ppm)",
+    "Th (ppm)",
+    "CaO (wt.%)",
+    "Nb (ppm)",
+    "Ba (ppm)",
+    "Zr (ppm)",
+    "P2O5 (wt.%)",
+    "Dy (ppm)"
+  ],
+  "exploratory_only": true,
+  "global_attribution_gate_passed": true,
+  "locked_bridge_feature_count": 9,
+  "locked_bridge_feature_status": [
+    {
+      "feature": "Rb (ppm)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "CaO (wt.%)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "Nb (ppm)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "Zr (ppm)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "P2O5 (wt.%)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "Ba (ppm)",
+      "reason": "all_predeclared_stability_checks_passed",
+      "status": "reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "MgO (wt.%)",
+      "reason": "repeat_direction;completed_direction_ci;observed_direction_ci",
+      "status": "not_reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "Na2O (wt.%)",
+      "reason": "rank_range",
+      "status": "not_reproduced_under_optuna_revision"
+    },
+    {
+      "feature": "K2O (wt.%)",
+      "reason": "rank_range",
+      "status": "not_reproduced_under_optuna_revision"
+    }
+  ],
+  "locked_bridge_features": [
+    "Rb (ppm)",
+    "CaO (wt.%)",
+    "Nb (ppm)",
+    "Zr (ppm)",
+    "P2O5 (wt.%)",
+    "Ba (ppm)",
+    "MgO (wt.%)",
+    "Na2O (wt.%)",
+    "K2O (wt.%)"
+  ],
+  "locked_feature_count": 9,
+  "locked_features_reproduced_count": 6,
+  "row_unit": "one row per Record ID",
+  "schema_version": "task-a-bridge-v7.1",
+  "selected_model": "XGBoost"
+}

@@ -1,0 +1,2 @@
+analysis_protocol_hash,model,evaluation,evaluation_unit,n,macro_f1,balanced_accuracy,macro_ovr_auc,precision_I,recall_I,f1_I,support_I,precision_A,recall_A,f1_A,support_A,precision_S,recall_S,f1_S,support_S
+A2CFC6311C185EAA2F17BA13E733D522713F64F2850C50F6EEF6E4CE1F592221,XGBoost,fixed_source_connected_heldout_evaluable_records,whole_rock_analysis,357,0.6975044994687339,0.7328347119275254,0.8838151954873416,0.6197183098591549,0.5057471264367817,0.5569620253164557,87,0.5697674418604651,0.875,0.6901408450704225,56,0.875,0.8177570093457944,0.8454106280193237,214

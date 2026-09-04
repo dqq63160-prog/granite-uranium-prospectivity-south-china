@@ -1,0 +1,286 @@
+{
+  "project_name": "Granite-type classification with source-connected validation",
+  "analysis_revision": "granite_classification_public_release",
+  "protocol_status": "frozen_before_formal_run",
+  "seed": 20260891,
+  "runtime": {
+    "strict_environment": true,
+    "lock_file": "../../requirements-lock.txt"
+  },
+  "paths": {
+    "s1": "../../data/source/Supplementary_Table_S1.xlsx",
+    "s2": "../../data/source/Supplementary_Table_S1.xlsx",
+    "output_root": "../../results/granite_classification",
+    "previous_group_only_results": null
+  },
+  "preprocessing": {
+    "feature_missingness_threshold": 0.5,
+    "row_missingness_threshold": 0.5,
+    "knn_neighbors": 10,
+    "excluded_features": [
+      "U",
+      "Th",
+      "Pb",
+      "FeOT"
+    ],
+    "transform": "log1p_then_training_fold_standardization",
+    "imputation": "distance_weighted_KNN_fitted_within_training_fold"
+  },
+  "domain": {
+    "primary_group_types": [
+      "Named pluton or intrusive unit",
+      "Pluton",
+      "Granite body",
+      "Granodiorite body",
+      "Granitoid body",
+      "Batholith",
+      "Intrusion",
+      "Porphyritic granodiorite body"
+    ],
+    "out_of_domain_group_types": [
+      "Composite or parent geological unit",
+      "Regional multi-pluton assemblage",
+      "Regional migmatite–granite assemblage",
+      "Multi-pluton assemblage",
+      "Composite pluton",
+      "Composite pluton pair",
+      "Composite batholith",
+      "Composite granite pair",
+      "Regional igneous assemblage",
+      "Regional igneous suite",
+      "Regional magmatic assemblage",
+      "Regional metallogenic assemblage",
+      "Regional metallogenic granitoid assemblage",
+      "Regional metallogenic granitoid suite",
+      "Intrusive assemblage",
+      "Granite–migmatite complex",
+      "Granite complex",
+      "Intrusive complex",
+      "Batholith and evolved granite suite",
+      "Granite suite",
+      "Deposit-scale intrusive suite",
+      "Deposit-scale granitoid suite",
+      "Deposit-scale granitic-vein suite",
+      "Deposit-scale intrusion",
+      "Deposit-scale granite-porphyry suite",
+      "Granite-porphyry suite",
+      "Granite-porphyry body",
+      "Granodiorite-porphyry body"
+    ],
+    "reporting_rule": "primary_domain_only_for_main_claim; out_of_domain_reported_as_transfer"
+  },
+  "data_filter": {
+    "purpose": "Reproduce the frozen pre-model v5 cohort before splitting, tuning, fitting or SHAP.",
+    "exclude_out_of_domain": true,
+    "exclude_mixed_type_groups": true,
+    "hard_exclude_group_types": [
+      "Regional multi-pluton assemblage",
+      "Regional migmatite–granite assemblage",
+      "Multi-pluton assemblage",
+      "Composite pluton",
+      "Composite pluton pair",
+      "Composite batholith",
+      "Composite granite pair",
+      "Regional igneous assemblage",
+      "Regional igneous suite",
+      "Regional magmatic assemblage",
+      "Regional metallogenic assemblage",
+      "Regional metallogenic granitoid assemblage",
+      "Regional metallogenic granitoid suite",
+      "Intrusive assemblage",
+      "Granite–migmatite complex",
+      "Deposit-scale intrusive suite",
+      "Deposit-scale granitoid suite",
+      "Deposit-scale granitic-vein suite",
+      "Deposit-scale intrusion",
+      "Deposit-scale granite-porphyry suite",
+      "Granite-porphyry suite",
+      "Granite-porphyry body",
+      "Granodiorite-porphyry body",
+      "Batholith and evolved granite suite"
+    ],
+    "mixed_minority_threshold": 0.2,
+    "minimum_group_size": 5,
+    "exclude_groups": [],
+    "expected_explicit_IAS_records": 2874,
+    "expected_retained_records": 1864,
+    "enforce_expected_counts": true
+  },
+  "locked_bridge_features": [
+    "Rb",
+    "CaO",
+    "Nb",
+    "Zr",
+    "P2O5",
+    "Ba"
+  ],
+  "bridge_features": {
+    "primary_reproduced_in_task_a": [
+      "Rb",
+      "CaO",
+      "Nb",
+      "Zr",
+      "P2O5",
+      "Ba"
+    ],
+    "legacy_sensitivity_only": [
+      "MgO",
+      "Na2O",
+      "K2O"
+    ],
+    "primary_rule": "Only features independently reproduced by Task A enter the primary cross-task correspondence statistic."
+  },
+  "label_audit": {
+    "source_independence_verified": true,
+    "verification_rule": "Author-confirmed: I/A/S labels originate from source petrological assignments rather than being generated solely by fixed thresholds on the predictors interpreted by SHAP.",
+    "verification_provenance": "Author confirmation recorded before the formal rerun."
+  },
+  "holdout": {
+    "target_fraction": 0.2,
+    "candidate_seeds": [
+      20260891,
+      20260892,
+      20260893,
+      20260894,
+      20260895,
+      20260896,
+      20260897,
+      20260898,
+      20260899,
+      20260900,
+      20260901,
+      20260902,
+      20260903,
+      20260904,
+      20260905,
+      20260906,
+      20260907,
+      20260908,
+      20260909,
+      20260910
+    ],
+    "candidate_folds": 5,
+    "minimum_geological_groups_per_class_per_partition": 2,
+    "objective_weights": {
+      "size_deviation": 1.0,
+      "class_proportion_deviation": 1.0
+    }
+  },
+  "validation": {
+    "outer_folds": 4,
+    "inner_folds": 3,
+    "final_tuning_folds": 3
+  },
+  "split_integrity": {
+    "require_all_IAS_classes_in_each_partition": true,
+    "maximum_seed_attempts": 100,
+    "selection_rule": "Use the first deterministic seed at or above the requested seed that gives complete I/A/S coverage in every source-connected fold; model performance is never consulted."
+  },
+  "optimization": {
+    "trials_per_model": 60,
+    "model_n_jobs": 6,
+    "sampler": "Optuna_TPE",
+    "inner_objective": "geological_group_by_reported_type_macro_f1",
+    "study_revision": "task_b_source_connected_class_neutral_v6_rigorous",
+    "persistent_storage": "04_Outputs/task_b_source_connected_class_neutral_v6/07_Logs/task_b_class_neutral_optuna.sqlite3",
+    "pruning": false,
+    "pruner": "NopPruner",
+    "maximum_failed_trials_per_study": 60
+  },
+  "selection": {
+    "primary_metric": "geological_group_by_reported_type_macro_f1",
+    "macro_f1_tolerance": 0.01,
+    "tie_break_order": [
+      "geological_group_by_reported_type_balanced_accuracy",
+      "minimum_class_recall",
+      "geological_group_by_reported_type_macro_ovr_auc",
+      "outer_fold_macro_f1_standard_deviation"
+    ],
+    "tree_shap_eligible_models": [
+      "RF",
+      "XGBoost"
+    ],
+    "source_block_bootstrap_replicates": 2000,
+    "minimum_macro_f1_gain": 0.0,
+    "interpretation_gate": {
+      "minimum_macro_f1": 0.45,
+      "minimum_balanced_accuracy": 0.45,
+      "minimum_class_f1": 0.35,
+      "minimum_class_recall": 0.35
+    }
+  },
+  "shap": {
+    "crossfit_folds": 5,
+    "top_features_per_class": 15,
+    "output_scale": "model_native_tree_output",
+    "require_additivity_check": true,
+    "direction_block_bootstrap_replicates": 2000
+  },
+  "probability_audit": {
+    "n_bins": 10,
+    "probability_scale": "nested_temperature_calibrated_oof_with_uncalibrated_sensitivity",
+    "reporting_units": [
+      "record",
+      "geological_group_by_reported_type_stratum"
+    ],
+    "used_for_model_selection": false,
+    "used_for_probability_recalibration": true,
+    "calibration_boundary": "temperature is fitted only from inner OOF predictions inside each outer-training partition"
+  },
+  "repeated_validation": {
+    "enabled": true,
+    "purpose": "confirmatory split-sensitivity audit of the algorithm selected by the frozen four-model comparison; Part 4 is not consulted",
+    "repeat_seeds": [
+      20260891,
+      20260892,
+      20260893,
+      20260894,
+      20260895
+    ],
+    "outer_folds": 4,
+    "inner_folds": 3,
+    "trials_per_outer_fold": 60,
+    "source_block_bootstrap_replicates": 2000
+  },
+  "repeated_shap": {
+    "enabled": true,
+    "repeat_seeds": [
+      20269892,
+      20269893,
+      20269894,
+      20269895,
+      20269896
+    ],
+    "folds": 5,
+    "calibration_inner_folds": 3,
+    "direction_block_bootstrap_replicates": 2000,
+    "canonical_repeat_id": 1,
+    "interpretation_unit": "geological group with source-block resampling"
+  },
+  "correlation_sensitivity": {
+    "method": "correlation_cluster_grouped_shap_importance",
+    "absolute_spearman_threshold": 0.85,
+    "role": "sensitivity analysis for attribution redistribution under correlated and compositionally constrained predictors"
+  },
+  "coupling_readiness": {
+    "exploratory": {
+      "minimum_median_rank_spearman": 0.5,
+      "minimum_mean_top10_overlap": 0.5,
+      "maximum_additivity_closure_error": 1e-05,
+      "minimum_locked_feature_availability": 0.75,
+      "minimum_locked_direction_sign_consistency": 0.6,
+      "require_all_locked_features": true
+    },
+    "internally_robust": {
+      "minimum_macro_f1": 0.55,
+      "minimum_balanced_accuracy": 0.55,
+      "minimum_class_f1": 0.5,
+      "minimum_median_rank_spearman": 0.6,
+      "minimum_mean_top10_overlap": 0.6,
+      "maximum_additivity_closure_error": 1e-05,
+      "minimum_locked_feature_availability": 0.9,
+      "minimum_locked_direction_sign_consistency": 0.7,
+      "require_all_locked_features": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "gate_checks": {
+    "task_a_exploratory_bridge_eligible": true,
+    "task_b_overall_formal_ready": false,
+    "s_f1_pass": true,
+    "s_rank_stability_pass": true,
+    "s_top10_stability_pass": true,
+    "shared_direction_pass": true,
+    "minimum_dependency_blocks_pass": true,
+    "restricted_s_diagnostic_eligible": true,
+    "raw_probability_association_pass": true,
+    "calibrated_sensitivity_direction_agrees": true,
+    "figure8_main_text_eligible": true,
+    "formal_full_three_class_coupling_eligible": false
+  },
+  "task_b_readiness_level": "not_ready",
+  "figure8_placement": "main_text",
+  "permitted_primary_claim": "Restricted, hypothesis-generating S-type correspondence.",
+  "prohibited_claims": [
+    "Task B validates Task A.",
+    "I/A weak coupling proves geological irrelevance.",
+    "SHAP establishes petrogenetic or metallogenic causality.",
+    "Coupling improves prediction without nested prospective comparison."
+  ]
+}

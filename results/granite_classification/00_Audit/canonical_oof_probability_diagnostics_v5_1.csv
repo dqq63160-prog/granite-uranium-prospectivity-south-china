@@ -1,0 +1,3 @@
+evaluation_unit,probability_scale,n_units,n_geological_groups,n_source_blocks,multiclass_log_loss,multiclass_brier,top_label_ece,support_I,support_A,support_S
+record,uncalibrated_oof,1709,71,68,0.8767256525136031,0.5048683081003319,0.06942756726003797,458,213,1038
+geological_group_by_reported_type_stratum,uncalibrated_oof,71,71,68,0.8221875891949235,0.4809767004154301,0.16254725367367753,20,14,37
